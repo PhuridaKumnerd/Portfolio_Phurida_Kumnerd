@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System</title>
+    <link rel="stylesheet" href="static/css/resultPage.css">
+<html>
+
+    <head>
+        <title>Online Voting System</title>
+    </head>
+    <body>
+        <nav>
+            <div class="container">
+                <div class="nav-con">
+                    <div class="logo"> <img class="img-size" src="static\pic\Logo.png" alt=""></div>
+                    <ul class="menu">
+                        <li><a href="/#">Home</a></li>
+                        <li><a href="/resultpage">Score</a></li>
+                        <li><a href="/votepage">Vote</a></li>
+                        <li><a href="/login"> <img class="img-size" src="static\pic\Account_icon.png" alt=""></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section class="content">
+            <div class="container">
+                <div class="container-title">
+                    <div class="container-title-line">
+                        <div class="Score">
+                            <h3>Score</h3>
+                        </div>
+                    </div> 
+                </div>
+
+                
+                
+                <div class="flexbox">
+                    {% set total_score = data | map(attribute=3) | sum %}
+                    {% for row in data %} 
+                        <div class="candidate">
+                            <div class="candidate-score">
+                                <div class="text">
+                                    <div class="text-img">
+                                        <img src="static/pic/picfor.png">
+                                        <p>{{ row[1] }}</p>
+                                    </div>
+                                    {% if total_score != 0 %}
+                                        <p>{{ (row[3] / total_score * 100) | round(2) }} %</p>
+                                    {% else %}
+                                        <p>0 %</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>   
+                    {% endfor %}
+                </div>
+
+                <!-- เพิ่มส่วนของ HTML สำหรับกราฟ -->
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                <canvas id="barChart" width="400" height="200"></canvas>
+
+                <!-- เพิ่มส่วนของ JavaScript เพื่อสร้างกราฟ -->
+                <script id="script_chart2">
+                    var ctx = document.getElementById('barChart').getContext('2d');
+
+                    var data = {
+                        labels: [ {% for row in data %}"{{ row[1] }}", {% endfor %} ],
+                        datasets: [{
+                            label: 'Scores',
+                            data: [ {% for row in data %}{{ row[3] }}, {% endfor %} ],
+                            backgroundColor: 'rgba(225, 237, 255, 1)', // สีของแท่งกราฟ
+                            borderColor: 'rgba(225, 237, 255, 1)', // สีของเส้นกราฟ
+                            borderWidth: 1
+                        }]
+                    };
+
+                    var options = {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    };
+
+                    var myBarChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: data,
+                        options: options
+                    });
+                </script>
+
+
+            </div>
+        </section>
+
+        <div class="footer-clean">
+            <footer>
+                <div class="container">
+                    <div class="row-justify-content-center">
+                        <div class="col-sm-4-col-md-3-item-1">
+                            <h3>Services</h3>
+                            <ul>
+                                <li><a href="#">Web design</a></li>
+                                <li><a href="#">Development</a></li>
+                                <li><a href="#">Hosting</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4-col-md-3-item-2">
+                            <h3>About</h3>
+                            <ul>
+                                <li><a href="#">Company</a></li>
+                                <li><a href="#">Team</a></li>
+                                <li><a href="#">Legacy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4-col-md-3-item-3">
+                            <h3>Careers</h3>
+                            <ul>
+                                <li><a href="#">Job openings</a></li>
+                                <li><a href="#">Employee success</a></li>
+                                <li><a href="#">Benefits</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3-item-social">
+                        <img class="static\pic\x_icon" src="x.png" alt="">
+                        <img class="static\pic\facebook_icon" src="facebook.png" alt="">
+                        <img class="static\pic\ig_icon" src="instagram.png" alt=""></a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

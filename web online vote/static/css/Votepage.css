@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: auto;
+    margin: auto;
+
+}
+
+nav{
+    padding: 1rem;
+    background-color: rgba(107, 152, 220, 0.90); 
+    position: relative;
+    height: 70px;
+}
+
+.nav-con {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+}
+
+.nav-con .logo {
+    flex: 1;
+    display: flex;
+    position: relative; 
+    padding: 0px;
+    top: -8px;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    align-items: center;   
+    position: relative;
+}
+
+.menu li {
+    margin: 0 1.3rem; 
+    padding: 2px;
+    position: relative; 
+    display: flex;
+    align-items: center; 
+    top: -6.5px; 
+    
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding-left: 30px;
+    width: 20%;
+    position: relative;
+    left: 30%; 
+}
+
+.content .container {
+    margin-top: 2rem;
+}
+
+.content .container .container-title-line {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.container-title-line .candidate h3 {
+    color: rgba(49, 47, 153, 1);
+    font-size: 70px;
+    font-weight: 400;
+    justify-content: center;
+    display: flex;
+    width: 365px; 
+    height: 105px; 
+    left: 561px; 
+    top: 0px; 
+    position: absolute; 
+}
+
+.flexbox {
+    margin-top: 50px;
+    margin: 60px;
+    
+}
+
+.content .container .flexbox {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .flexbox .item {
+    display: block;
+    box-sizing: border-box;
+    width: 33.33%;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 120px;
+    margin-bottom: -30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-item {
+    background-color: rgba(225, 237, 255, 0.9);
+    border: 2px;
+    padding: 18px;
+    padding-bottom: 60px;
+    
+}
+
+.flexbox .item h4 {
+    color: rgba(27, 87, 176, 1);
+    justify-content: center;
+    display: flex;
+    text-align: center;
+}
+
+.flexbox .item p {
+    color: rgba(45, 131, 155, 1);
+    margin-top: 13px;
+    font-size: 16px;
+    text-align: center;
+    word-wrap: break-word
+}
+
+.content-item .content-bottom {
+    text-decoration: none;
+    color: white;
+    background-color: rgba(27, 87, 176);
+    font-size: 1rem;
+    padding: 10px;
+    position: relative;
+    left: 38%;
+    font-size: 1rem;
+    top: 30px;
+}
+
+footer{
+    padding: 1rem;
+    background-color: rgba(27, 87, 176, 1); 
+    position: relative;
+    height: 270px;
+    top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .footer-clean .item.social {
+      text-align:center;
+    }
+}
+  
+.footer-clean .item.social > a {
+    font-size:24px;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    display:inline-block;
+    text-align:center;
+    border-radius:50%;
+    border:1px solid #ccc;
+    margin-left:10px;
+    margin-top:22px;
+    color:inherit;
+    opacity:0.75;
+}
+  
+@media (max-width:991px) {
+    .footer-clean .item.social > a {
+      margin-top:40px;
+    }
+}
+  
+@media (max-width:767px) {
+    .footer-clean .item.social > a {
+      margin-top:10px;
+    }
+}
+
+.col-sm-4-col-md-3-item-1 h3{
+    text-decoration: none;
+    color: rgba(137, 194, 255, 1);
+    font-size: 22px;
+
+}
+
+.col-sm-4-col-md-3-item-1 ul{
+    list-style: none;
+}
+
+.col-sm-4-col-md-3-item-1 a{
+    text-decoration: none;
+    color: white; 
+    position: relative;
+    font-size: 18px;
+    list-style: none;
+}
+
+.col-sm-4-col-md-3-item-2 {
+    list-style: none;
+}
+
+.col-sm-4-col-md-3-item-2 h3 {
+    text-decoration: none;
+    color: rgba(137, 194, 255, 1);
+    font-size: 22px;
+}
+
+.col-sm-4-col-md-3-item-2 ul{
+    list-style: none;
+}
+
+.col-sm-4-col-md-3-item-2 a{
+    text-decoration: none;
+    color: white; 
+    position: relative;
+    font-size: 18px;
+    list-style: none;
+}
+
+.col-sm-4-col-md-3-item-3 h3{
+    text-decoration: none;
+    color: rgba(137, 194, 255, 1);
+    font-size: 22px;
+}
+
+.col-sm-4-col-md-3-item-3 ul{
+    list-style: none;
+}
+
+.col-sm-4-col-md-3-item-3 a{
+    text-decoration: none;
+    color: white; 
+    position: relative;
+    font-size: 18px;
+}
+
+.row-justify-content-center {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+}
+  
+.col-lg-3-item-social {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+
+}
+
+  

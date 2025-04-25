@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System</title>
+    <link rel="stylesheet" href="static/css/signUpPage.css">
+</head>
+<body>
+    
+    <nav>
+        <div class="container">
+            <div class="nav-con">
+                <div class="logo"> <img class="img-size" src="static\pic\Logo.png" alt=""></div>
+                <ul class="menu">
+                    <li><a href="/#">Home</a></li>
+                    <li><a href="/scorepage">Score</a></li>
+                    <li><a href="/votepage">Vote</a></li>
+                    <li><a href="/login"> <img class="img-size" src="static\pic\Account_icon.png" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <form method="post" action="{{ url_for('signup') }}">
+        <div class="center">
+            <h1>Signup</h1>
+            <div class="txt_field">
+                <input type="text" name="username" required>
+                <label>Username</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" name="email" required>
+                <label>Email</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" name="password" required>
+                <label>Create Password</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" name="confirm_password" required>
+                <label>Confirm Password</label>
+            </div>
+            <input type="submit" value="CREATE">
+            <div class="signup_link">
+            </div>
+        </div>
+    </form>
+    
+
+    <div class="footer-clean">
+        <footer>
+            <div class="container">
+                <div class="row-justify-content-center">
+                    <div class="col-sm-4-col-md-3-item-1">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Web design</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Hosting</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4-col-md-3-item-2">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Legacy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4-col-md-3-item-3">
+                        <h3>Careers</h3>
+                        <ul>
+                            <li><a href="#">Job openings</a></li>
+                            <li><a href="#">Employee success</a></li>
+                            <li><a href="#">Benefits</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3-item-social">
+                    <img class="x_icon" src="static\pic\x.png" alt="">
+                    <img class="facebook_icon" src="static\pic\facebook.png" alt="">
+                    <img class="ig_icon" src="static\pic\instagram.png" alt=""></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+   
+    </body>
+</html>
